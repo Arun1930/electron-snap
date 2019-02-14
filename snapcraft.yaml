@@ -7,10 +7,10 @@ confinement: strict
 grade: devel
 
 apps:
-    electron-hello-world-kiosk:
+  electron-hello-world-kiosk:
     daemon: simple
     restart-condition: always
-    command: electron-hello-world-kiosk "$SNAP/electron-helloworld/electron-quick-start"
+    command: desktop-launch xwayland-kiosk-launch "$SNAP/electron-helloworld/electron-quick-start"
     environment:
       XWAYLAND_FULLSCREEN_WINDOW_HINT: window_role="browser-window"
     slots: [ x11 ]
@@ -31,7 +31,7 @@ plugs:
     interface: x11
 
 parts:
-  electron-hello-world-kiosk:
+  electron-helloworld:
     plugin: nodejs
     source: https://github.com/electron/electron-quick-start.git
     after: [desktop-gtk2, xwayland-kiosk-helper]
