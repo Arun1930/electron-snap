@@ -10,7 +10,7 @@ apps:
   electron-helloworld:
     daemon: simple
     restart-condition: always
-    command: electron-helloworld "$SNAP/electron-hello-world/electron-quick-start"
+    command: electron-hello-world "$SNAP/electron-hello-world/electron-quick-start"
     environment:
       XWAYLAND_FULLSCREEN_WINDOW_HINT: window_role="browser-window"
     slots: [ x11 ]
