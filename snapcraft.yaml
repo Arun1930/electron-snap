@@ -1,4 +1,4 @@
-name: electron-helloworld
+name: electron-hello-world-kiosk
 version: 0.1
 summary: Hello World Electron app for a Kiosk
 description: |
@@ -7,10 +7,10 @@ confinement: strict
 grade: devel
 
 apps:
-  electron-helloworld:
+  electron-hello-world-kiosk:
     daemon: simple
     restart-condition: always
-    command: electron-hello-world "$SNAP/electron-hello-world/electron-quick-start"
+    command: electron-hello-world-kiosk "$SNAP/electron-helloworld/electron-quick-start"
     environment:
       XWAYLAND_FULLSCREEN_WINDOW_HINT: window_role="browser-window"
     slots: [ x11 ]
